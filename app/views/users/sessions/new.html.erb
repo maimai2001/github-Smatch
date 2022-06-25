@@ -3,7 +3,7 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <h2>メール </h2><br />
+    <h2>メールアドレス </h2><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -16,7 +16,7 @@
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
-      <h2>私を覚える</h2>
+      <h4>私を覚える</h4>
     </div>
   <% end %>
 
