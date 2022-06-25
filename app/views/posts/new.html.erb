@@ -1,0 +1,21 @@
+<h1>Smatch</h1>
+<h3>新規投稿</h3>
+
+<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  アプリ追加:<%= text_field_tag :tag %>
+  <%= submit_tag 'タグを追加' %>
+<% end %>
+
+<%= form_with(model: @post, url: {controller: 'posts', action: 'create'} ,local: true) do |form|%>
+  <div class="form">
+      <div class="form-body">
+          アプリを選択:<%= form.collection_select(:tag,@tags,:name,:name)%>
+
+          時間:<%= form.number_field :time %>h
+
+          <%= form.submit "保存"%>
+      </div>
+    </div>
+<% end %>
+<%= button_to "記録一覧に戻る", posts_path %>
+  

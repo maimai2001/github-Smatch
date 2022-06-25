@@ -1,0 +1,23 @@
+<h1>Smatch</h1>
+<h3>記録一覧</h3>
+<%= link_to "新規投稿ページへ", new_post_path %>
+
+<% if user_signed_in? %>
+<%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+<div class="posts-container">
+  <% @posts.each do |t| %>
+    <div class="post">
+      時間: <%= t.time %>h
+      アプリ名: <%= t.tag %>
+      <%= t.created_at %>
+      <%= link_to "詳細へ", post_path(t.id) %>
+      <%= link_to "編集する", edit_post_path(t.id) %>
+      <%= button_to "削除する", post_path(t.id), method: :delete %>
+    </div>
+  <% end %>
+  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</div>
+
+<%= column_chart @sum %>

@@ -1,0 +1,15 @@
+<h1>Smatch</h1>
+<h3>記録データ詳細</h3>
+<div class="post">
+  <p><%= @post.about %></p>
+  <p><%= @post.time %></p>
+  <p><%= @post.created_at %></p>
+</div>
+
+<%= link_to "編集する", edit_post_path(@post.id) %>
+<%= link_to "記録一覧に戻る", posts_path %>
+
+<!-- 投稿ごとのタグを表示する -->
+<%= @post.tag %>
+
+

@@ -1,0 +1,2 @@
+class Detum < ApplicationRecord
+end

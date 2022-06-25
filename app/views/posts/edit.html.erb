@@ -1,0 +1,11 @@
+<h1>Smatch</h1>
+
+
+<%= form_for @post do |f| %>
+    <%= f.label :アプリ名 %>
+    <%= f.text_field :about, :size => 35 %>
+    <%= f.label :使用時間 %>
+    <%= f.text_field :time, :size => 35 %>
+    <%= f.submit "編集する" %>
+  <% end %>
+  
