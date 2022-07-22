@@ -13,3 +13,154 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+    margin: 0;
+    padding: 0;
+  }
+
+   header{
+    height: 100px;
+    background-color: rgb(171, 197, 190);
+    background: linear-gradient(to right, #b8b8ca 0%, #9db8cc 100%);
+  }
+
+  header a{
+    color: white; 
+    text-decoration: none; 
+  }
+
+  header h1 {
+   color: white;
+   margin-left: 10px;
+  }
+
+  .header-list {
+    display: flex;
+    align-items: center;
+    font-family: serif;
+  }
+
+  header ul {
+    display: flex;
+  }
+
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  a {
+    color: rgb(107, 147, 151);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(19, 104, 60);
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #5f9b78d1;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 20%;
+    height: 70%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: rgba(110, 164, 158, 0.771);
+    transition: all 0.5s;/*アニメーション設定*/
+    
+}
+
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #85bf9f;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#d5ecec;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #89d6e2;
+    border-right: solid 2px #154279;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 80%;/*メニューを画面内へ*/
+}
+
+
+  footer {
+    height: 30px;
+    background-color: rgb(90, 104, 111);
+    width: 100%;
+    font-size: 15px;
+    color: rgb(170, 198, 200);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
