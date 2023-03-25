@@ -38,7 +38,6 @@
   .header-list {
     display: flex;
     align-items: center;
-    font-family: serif;
   }
 
   header ul {
